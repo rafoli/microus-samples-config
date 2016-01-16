@@ -11,7 +11,10 @@ server:
 # requests using zuul
 zuul:
   routes:
-    userservice: /api/user/**
+    ignoredServices: '*'
+    users: 
+      path: /api/user/**
+      serviceId: userservice
     
 # Define the Eureka server that handles service registration
 eureka:
