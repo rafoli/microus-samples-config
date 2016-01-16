@@ -1,6 +1,6 @@
 server:
   port: 8081
-  contextPath=/springfox  
+  contextPath: /springfox  
 
 eureka:
   instance:
