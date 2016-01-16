@@ -4,7 +4,7 @@ server:
 eureka:
   instance:
     metadataMap:
-      instanceId: ${spring.application.name}:${spring.application.instance_id}:${server.port}
+      instanceId: ${spring.application.name}:${spring.application.instance_id:${server.port}}
   client:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
