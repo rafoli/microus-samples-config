@@ -12,7 +12,7 @@ server:
 zuul:
   routes:
     ignoredServices: '*'
-    users: 
+    userservice: 
       path: /api/user/**
       serviceId: userservice
     
