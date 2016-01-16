@@ -11,9 +11,9 @@ server:
 # requests using zuul
 zuul:
   routes:
-    userservice: 
+    user: 
       path: /api/user/**
-      url: http://localhost:8081/api/user
+      serviceId: userservice
     
 # Define the Eureka server that handles service registration
 eureka:
