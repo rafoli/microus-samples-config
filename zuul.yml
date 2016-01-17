@@ -11,8 +11,8 @@ server:
 # requests using zuul
 zuul:
   routes:
-    todobackend  : /api/todo/**
-    todofrontend : /**
+    todobackend: /api/todo/**
+    todofrontend: /**
     
 # Define the Eureka server that handles service registration
 eureka:
