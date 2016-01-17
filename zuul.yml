@@ -12,6 +12,7 @@ server:
 zuul:
   routes:
     userservice: /api/user/**
+    todoservice: /api/todo/**
     
 # Define the Eureka server that handles service registration
 eureka:
