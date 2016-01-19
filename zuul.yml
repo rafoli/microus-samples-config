@@ -11,7 +11,7 @@ server:
 # requests using zuul
 zuul:
   routes:
-    dashboard: /dashboard/**
+    #dashboard: /dashboard/**
     todobackend: /api/todo/**
     todofrontend: /**
     
