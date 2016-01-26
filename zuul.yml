@@ -11,9 +11,11 @@ server:
 # requests using zuul
 zuul:
   routes:
-    #dashboard: /dashboard/**
-    todobackend: /api/todo/**
-    todofrontend: /**
+    workspace: /workspace/**
+    #todobackend: 
+    #  path: /api/todos/**
+    #  stripPrefix: false
+    #todofrontend: /**
     
 ribbon:
   MaxAutoRetries: 1 # Max number of retries on the same server (excluding the first try)
