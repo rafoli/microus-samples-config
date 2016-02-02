@@ -1,30 +1,24 @@
 # Define the port where the API gateway server would be running
 server:
-  port: 8777
-    
-# Define the routes which determine what URL are serviced by what applications.
-# The application/services are defined in the bootstrap.yml file of individual applications
-# using the spring.application.name property.
+  port: 8080
 
-# Note that we don't proxy the calls to the authorization server. The reason being that 
-# Spring cloud security would need to secure the api gateway before it can route the 
-# requests using zuul
+logging:
+  level:
+    org.springframework.security: DEBUG
+security:
+  sessions: ALWAYS
 zuul:
   routes:
-    workspace: /**
-    #todobackend: 
-    #  path: /api/todos/**
-    #  stripPrefix: false
-    #todofrontend: /**
-    
-ribbon:
-  MaxAutoRetries: 1 # Max number of retries on the same server (excluding the first try)
-  MaxAutoRetriesNextServer: 2 # Max number of next servers to retry (excluding the first server)    
-  ConnectTimeout: 3000 # Connect timeout used by Apache HttpClient
-  ReadTimeout: 5000 # Read timeout used by Apache HttpClient
+    app:  /app/**
+    appbackend: /resource/** 
+    admin: /admin/**
+    authserver:
+      path: /user/**
+      url: http://localhost:9999/uaa/user   
+    authserver: /**    
     
 # Define the Eureka server that handles service registration
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: http://localhost:8761/eureka/  

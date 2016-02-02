@@ -1,0 +1,29 @@
+server:
+  port: 9999
+  contextPath: /uaa
+
+eureka:
+  instance:
+    metadataMap:
+      instanceId: ${spring.application.name}:${spring.application.instance_id:${server.port}}
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+
+security:
+  user:
+    password: password
+  sessions: if-required  
+  oauth2:
+    client:
+      clientId: acme
+      clientSecret: acmesecret
+      authorizedGrantTypes: authorization_code,refresh_token,password
+      scopes: openid   
+
+logging:
+  level:
+    org.springframework.security: DEBUG
+
+

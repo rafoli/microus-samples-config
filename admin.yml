@@ -1,0 +1,18 @@
+server:
+  port: 8082
+
+security:
+  user:
+    role: USER,ADMIN  
+
+logging:
+  level:
+    org.springframework.security: DEBUG
+
+eureka:
+  instance:
+    metadataMap:
+      instanceId: ${spring.application.name}:${spring.application.instance_id:${server.port}}
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
